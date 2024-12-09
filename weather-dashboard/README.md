@@ -18,7 +18,7 @@
     •	Angular CLI (version 18 or higher)
     1. Clone the Repository
          bash
-         git clone https://github.com/your-username/weather-dashboard.git
+         git clone https://github.com/AnushAvanesyan/Weather-dashboard.git
      2. Install Dependencies
         Navigate into the project directory and install the required dependencies.
         bash
