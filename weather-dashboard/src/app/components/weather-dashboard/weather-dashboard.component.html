@@ -1,0 +1,37 @@
+<div class="container mx-auto p-6" [@slideIn]>
+  <!-- Input Section -->
+  <div class="flex flex-wrap items-center justify-center gap-4 mb-6">
+    <input
+      type="text"
+      [(ngModel)]="cityName"
+      placeholder="Enter city name"
+      class="flex-1 min-w-[200px] p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+    />
+    <button
+      (click)="addCity()"
+      class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition"
+    >
+      Add City
+    </button>
+  </div>
+
+  <!-- Loading Indicator -->
+  <div *ngIf="isLoading" class="text-center text-blue-500 font-semibold">
+    Loading...
+  </div>
+
+  <!-- Error Message -->
+  <div *ngIf="error" class="text-center text-red-500 font-medium ">
+    {{ error }}
+  </div>
+
+  <!-- City Cards Grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+    <app-city-card
+      *ngFor="let city of cities; let i = index"
+      [city]="city"
+      (remove)="removeCity(i)"
+      [@fadeIn]
+    ></app-city-card>
+  </div>
+</div>
